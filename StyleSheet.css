@@ -1,0 +1,362 @@
+/* Reset default margin and padding for body and html */
+html, body {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    height: 100%; /* Ensures the body takes up the full height of the page */
+}
+
+/* Add padding to main content to keep it away from the left margin */
+main {
+    padding: 0 100px; /* Adds spacing on the left and right of the main content */
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+}
+
+/* Header and Navigation Bar */
+header {
+    display: flex; /* Makes the header a flexible container */
+    align-items: center; /* Vertically aligns items inside the header */
+    justify-content: space-between; /* Space between logo and nav links */
+    background-color: #FFFFFF; /* Light background color for header */
+    height: 60px; /* Specifies header height */
+    padding: 0 20px; /* Adds padding for horizontal spacing inside the header */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height of the element */
+    position: fixed; /* Fixes header at the top of the page */
+    top: 0; /* Aligns to the top */
+    width: 100%; /* Full width of the page */
+    z-index: 100; /* Stays on top of other elements */
+}
+
+/* Logo Styling */
+.logo h1 {
+    font-family: 'Playfair Display SC', sans-serif; /* Apply Google font for the logo */
+    font-size: 30px; /* Adjust the font size of the logo */
+    color: #4a235a; /* Dark purple color for the logo */
+    margin-left: 10px; /* Slight space from the left edge */
+}
+
+/* Navigation Links */
+nav {
+    display: flex; /* Enable flexbox for the nav container */
+    justify-content: flex-end; /* Align navigation links to the right */
+    align-items: center; /* Vertically center links */
+    flex-grow: 1; /* Allows nav to take up remaining space */
+}
+
+nav .nav-links {
+    list-style: none; /* Removes bullets */
+    display: flex; /* Align links in a row */
+    gap: 30px; /* Adds space between each link */
+    margin: 0; /* Removes any margin */
+    padding: 0; /* Removes padding */
+}
+
+/* Individual Navigation Links */
+nav .nav-links li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #4a235a; /* Dark purple color for the links */
+    font-size: 20px; /* Adjust font size */
+    font-family: 'Arial', sans-serif; /* Clean font for navigation links */
+    padding: 15px; /* Adds clickable space around the text */
+    border-radius: 90px; /* Rounds edges of the link container */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for navigation links */
+nav .nav-links li a:hover {
+    background-color: #e89309; /* Changes background color when hovered */
+    color: #FFFFFF; /* Changes text color to white when hovered */
+}
+
+/* Responsive Navigation Bar */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stacks logo and nav vertically on smaller screens */
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    nav .nav-links {
+        flex-direction: column; /* Stack navigation links vertically on smaller screens */
+        align-items: center; /* Centers the links horizontally */
+        gap: 10px; /* Adjusts spacing between links */
+    }
+}
+
+/* Body Styling */
+body {
+    display: block; /* Changes body to block display mode */
+    background-color: #f4ecf7; /* Light purple background color */
+    font-family: 'Times New Roman', Times, serif; /* Default font for body text */
+    font-size: 20px;
+    padding-top: 60px; /* Accounts for the fixed header height */
+}
+
+/* Headings Styling */
+h1 {
+    color: #4a235a; /* Dark purple color for headings */
+    margin: 20px 0; /* Adds vertical spacing for headings */
+    font-size: 48px; /* Sets the font size to 48px, adjust as needed */
+}
+
+h2, h3, h4 {
+    color: #4a235a; /* Dark purple color for headings */
+    margin: 20px 0; /* Adds vertical spacing for headings */
+    font-size: 30px; /* Sets the font size to 30px, adjust as needed */
+}
+
+
+/* Styles for other pages - excludes homepage */
+body:not(#homepage) .responsive-image {
+    max-width: 100%; /* Ensures image doesn't overflow container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    width: 300px; /* Sets a default width for the image */
+    display: block; /* Makes the image a block-level element */
+    margin: 0; /* Removes automatic centering */
+}
+
+/* Exclude homepage from flexbox container styles */
+body:not(#homepage) .content-row {
+    display: flex; /* Arrange items in a row */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Space between image and bubble */
+    margin: 20px 0; /* Adds spacing around the container */
+}
+
+/* Exclude homepage from image container styles */
+body:not(#homepage) .image-container img {
+    max-width: 100%; /* Ensures the image scales well */
+    width: 700px; /* Adjusts image size */
+    height: auto; /* Keeps the image aspect ratio */
+    border-radius: 20px; /* Rounds the corners */
+    box-shadow: 0 20px 24px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* Exclude homepage from chat bubble styles */
+body:not(#homepage) .chat-bubble {
+    background-color: #bccceb;
+    padding: 15px 20px;
+    border-radius: 20px;
+    max-width: 30%; /* Adjusted to fit next to image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Style for the list inside the chat bubble */
+.chat-bubble ul {
+    list-style-type: disc; /* Displays a bullet point for each list item */
+    padding-left: 20px; /* Indents the list from the left */
+}
+
+.chat-bubble li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Responsive CSS for youtube videos */
+.video-container {
+    position: relative; /* Positions the container relative to the page */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height as 56.25% of the width) */
+    height: 0; /* Sets the container's height to 0 (so padding controls the height) */
+    overflow: hidden; /* Hides any overflowing content, ensuring the video fits within the container */
+    max-width: 100%; /* Makes sure the container doesn’t exceed the page width */
+    background: #000; /* Sets a black background in case the video doesn't load properly */
+}
+
+.video-container iframe {
+    position: absolute; /* Positions the iframe absolutely inside the container */
+    top: 0; /* Aligns the iframe to the top of the container */
+    left: 0; /* Aligns the iframe to the left of the container */
+    width: 100%; /* Makes the iframe width fill the container */
+    height: 100%; /* Makes the iframe height fill the container */
+}
+
+/* Flashcard container */
+.flashcard-container {
+    display: flex;
+    justify-content: center;   /* Centers both horizontally */
+    align-items: center;       /* Centers both vertically */
+    min-height: 60vh;          /* Adjusted to take up 60% of the viewport height */
+    flex-direction: column;    /* Stack the flashcard and button vertically */
+    padding: 0 20px;           /* Optional: adds some padding to prevent content from touching the edges */
+    box-sizing: border-box;    /* Ensure padding doesn't affect the overall width/height */
+}
+
+/* Flashcard styling */
+.flashcard {
+    width: 400px; /* Sets the width of the flashcard */
+    height: 250px; /* Sets the height of the flashcard */
+    background-color: #4a235a; /* Dark purple background color */
+    border-radius: 20px; /* Rounds the corners of the flashcard */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    perspective: 1000px; /* Enable 3D space for flip effect */
+}
+
+.flashcard-inner {
+    position: relative; /* Positions the inner content relative to the flashcard */
+    width: 100%; /* Full width of the flashcard */
+    height: 100%; /* Full height of the flashcard */
+    transition: transform 0.6s; /* Smooth flipping transition */
+    transform-style: preserve-3d; /* Keeps both sides in 3D space */
+}
+
+/* Front and back faces of the flashcard */
+.flashcard-front, .flashcard-back {
+    position: absolute; /* Positions the front and back inside the container */
+    width: 100%; /* Full width of the flashcard */
+    height: 100%; /* Full height of the flashcard */
+    backface-visibility: hidden; /* Hides the face that is not visible when flipped */
+    display: flex; /* Centers content within the face */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    font-size: 20px; /* Sets the font size of text */
+    padding: 5px; /* Adds padding inside the face */
+    border-radius: 20px; /* Matches the rounded corners of the flashcard */
+}
+
+/* Front side - Question */
+.flashcard-front {
+    background-color: #bccceb; /* Light blue background */
+    color: white; /* White text color */
+}
+
+/* Back side - Answer */
+.flashcard-back {
+    background-color: #e3e3e3; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    transform: rotateY(180deg); /* Rotates the back to be hidden initially */
+}
+
+/* When card is flipped */
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg); /* Flips the card */
+}
+
+/* Next Button Styling */
+#next-button {
+    background-color: #e89309; /* Orange background color */
+    color: white; /* White text color */
+    border: none; /* Removes border */
+    padding: 10px 20px; /* Adds padding for size */
+    font-size: 18px; /* Sets button text size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 5px; /* Rounds the button corners */
+    margin-top: 20px; /* Adds space above the button */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+#next-button:hover {
+    background-color: #3e1e42; /* Darker color when hovered */
+}
+
+/* Copyright Styling */
+.copyright {
+    color: #4a235a; /* Dark purple text color */
+    font-size: 12px; /* Small font size */
+    text-align: center; /* Center aligns the text */
+    padding: 10px; /* Adds padding around the text */
+}
+
+/* General fade-in effect for elements */
+.fade {
+    opacity: 0; /* Initially makes the element invisible */
+    transform: translateY(50px); /* Moves the element down */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition for appearance */
+}
+
+/* Visible state when element is in view */
+.fade.visible {
+    opacity: 1; /* Makes the element visible */
+    transform: translateY(0); /* Resets the position to default */
+}
+
+/* General styles for image container */
+.image-container img {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Maintains aspect ratio of the image */
+    border-radius: 20px; /* Rounds the corners of the image */
+    box-shadow: 0 20px 24px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+}
+
+/* General styling for the chat bubble */
+.chat-bubble {
+    background-color: #bccceb; /* Light blue background */
+    padding: 15px 20px; /* Adds inner spacing */
+    border-radius: 20px; /* Rounds the corners */
+    max-width: 30%; /* Limits the width of the bubble */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+    font-family: 'Arial', sans-serif; /* Sets the font style */
+    font-size: 17px; /* Sets the font size */
+    line-height: 1.6; /* Improves readability with line spacing */
+}
+
+.form-container {
+    max-width: 800px; /* Limits the maximum width */
+    margin: 50px auto; /* Centers the container with top and bottom spacing */
+    background: #ffffff; /* White background */
+    border-radius: 10px; /* Rounds the corners */
+    padding: 20px; /* Adds inner spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Adds spacing between form groups */
+}
+
+label {
+    display: block; /* Places the label on a new line */
+    margin-bottom: 5px; /* Adds space below the label */
+    font-weight: bold; /* Makes the label text bold */
+}
+
+input, textarea, select {
+    width: 100%; /* Makes input fields full width */
+    padding: 10px; /* Adds inner padding */
+    font-size: 16px; /* Sets font size */
+    border: 1px solid #ccc; /* Adds a border */
+    border-radius: 5px; /* Rounds the corners */
+}
+
+textarea {
+    resize: none; /* Prevents resizing of the textarea */
+}
+
+.slider {
+    width: 100%; /* Makes slider full width */
+}
+
+.rating {
+    display: flex; /* Arranges stars in a row */
+    gap: 10px; /* Adds space between stars */
+}
+
+.rating input[type="radio"] {
+    display: none; /* Hides the radio buttons */
+}
+
+.rating label {
+    font-size: 25px; /* Sets star size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    color: lightgray; /* Default color for unselected stars */
+}
+
+.rating input:checked ~ label {
+    color: gold; /* Highlights selected stars in gold */
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold; /* Highlights stars on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+

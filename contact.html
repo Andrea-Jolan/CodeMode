@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - Submit Your Questions and Any Projects for Feedback | CodeMode Web Design</title>
+    <meta name="description" content="Get in touch with us! Fill out the project submission and questions form to contact our team and submit your project.">
+    <meta name="author" content="Andrea Nagy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CodeMode</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+            </ul>
+        </nav>
+    </header>
+   <main>
+    <!-- Main heading introducing the form purpose -->
+    <h1 style="text-align: center;">Submit Your Questions and Any Projects for Feedback</h1> <!-- Large heading, centered -->
+    <h2 style="text-align: center;">Let Us Know What We can Help You With</h2> <!-- Secondary heading, centered -->
+    
+    <!-- Section containing the form -->
+    <section class="form-container">
+        <h1 style="color: #bccceb; text-align: center;">Question Form</h1> <!-- Form title, styled -->
+        
+        <!-- Form starts here -->
+        <form id="project-form"> <!-- The form ID is used in JavaScript for data collection and processing -->
+            
+            <!-- Group for Name field -->
+            <div class="form-group">  
+                <label for="name">Name</label> <!-- Label for the Name input field -->
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required> <!-- Text input field for Name -->
+            </div>
+            
+            <!-- Group for Email field -->
+            <div class="form-group">
+                <label for="email">Email Address</label> <!-- Label for the Email input field -->
+                <input type="email" id="email" name="email" placeholder="Your Email" required> <!-- Input field for Email -->
+            </div>
+            
+            <!-- Group for Portfolio/Website link -->
+            <div class="form-group">
+                <label for="portfolio">Portfolio/Website Link (optional)</label> <!-- Label for Portfolio/Website input -->
+                <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com"> <!-- Optional URL input -->
+            </div>
+            
+            <!-- Group for Project Title -->
+            <div class="form-group">
+                <label for="title">Project Title</label> <!-- Label for the Project Title input field -->
+                <input type="text" id="title" name="title" placeholder="Project Title" required> <!-- Text input for the Project Title -->
+            </div>
+            
+            <!-- Group for Project Description -->
+            <div class="form-group">
+                <label for="description">Project Description</label> <!-- Label for the Project Description -->
+                <textarea id="description" name="description" rows="4" placeholder="Brief description of your project" required></textarea> <!-- Text area for entering Project Description -->
+            </div>
+            
+            <!-- Dropdown for selecting Project Type -->
+            <div class="form-group">
+                <label for="type">Project Type</label> <!-- Label for the dropdown -->
+                <select id="type" name="type" required> <!-- Dropdown for selecting project type -->
+                    <option value="" disabled selected>Select Project Type</option> <!-- Default unselectable option -->
+                    <option value="Portfolio">Portfolio</option> <!-- Option: Portfolio -->
+                    <option value="Blog">Blog</option> <!-- Option: Blog -->
+                    <option value="E-commerce">E-commerce</option> <!-- Option: E-commerce -->
+                    <option value="Landing Page">Landing Page</option> <!-- Option: Landing Page -->
+                    <option value="Other">Other</option> <!-- Option: Other -->
+                </select>
+            </div>
+            
+            <!-- Group for feedback preferences -->
+            <div class="form-group">
+                <label>Feedback Preferences</label> <!-- Label for the feedback section -->
+                <!-- Multiple radio buttons for selecting feedback preferences -->
+                <label><input type="radio" name="feedback" value="Design" required> Design</label> <!-- Option: Design -->
+                <label><input type="radio" name="feedback" value="Usability"> Usability</label> <!-- Option: Usability -->
+                <label><input type="radio" name="feedback" value="Code"> Code</label> <!-- Option: Code -->
+                <label><input type="radio" name="feedback" value="All"> All</label> <!-- Option: All -->
+            </div>
+            
+            
+            <!-- Slider for rating learning experience -->
+            <div class="form-group"><label for="learning">On a scale from 1-10 (1 being minimal knowledge and 10 being fully confident in basic web designing), how would you rate Codemode in your journey of gaining web design knowledge?</label> <!-- Label for the difficulty slider -->
+                <input type="range" id="learning" name="learning" min="1" max="10"> <!-- Slider to rate difficulty -->
+            </div>
+            
+            <!-- Textarea for questions -->
+            <div class="form-group">
+                <label for="questions">Do you have any questions or need any help?</label> <!-- Label for the questions -->
+                <textarea id="questions" name="questions" rows="4" placeholder="Ask any coding questions" required></textarea> <!-- Text area to share any coding questions -->
+            </div>
+            
+            <!-- Star rating system -->
+            <div class="form-group">
+                <label>Rate our learning materials:</label> <!-- Label for rating materials -->
+                <div class="rating"> <!-- Star rating using radio buttons -->
+                    <input type="radio" id="star1" name="rating" value="5"><label for="star1">★</label> <!-- Star for 5 -->
+                    <input type="radio" id="star2" name="rating" value="4"><label for="star2">★</label> <!-- Star for 4 -->
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label> <!-- Star for 3 -->
+                    <input type="radio" id="star4" name="rating" value="2"><label for="star4">★</label> <!-- Star for 2 -->
+                    <input type="radio" id="star5" name="rating" value="1"><label for="star5">★</label> <!-- Star for 1 -->
+                </div>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="button" id="submit-button">Submit</button> <!-- Button to trigger form submission -->
+        </form>
+    </section>
+</main>
+    <footer>
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

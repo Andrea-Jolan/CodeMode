@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript - Make Your Website Interactive | CodeMode Web Design</title>
+
+    <meta name="description" content="Master JavaScript with CodeMode. Learn essential programming concepts, functions, and interactivity to build dynamic websites and applications.">
+    <meta name="author" content="Andrea Nagy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <style>
+        /* Styles for h1 */
+        main h1 {
+            margin: 0;
+            padding-top: 50px; /* Accounts for the height of the fixed navigation bar */
+            text-align: center;
+            font-size: 48px;
+            color: #4a235a;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CodeMode</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>What is JavaScript?</h1>
+        <p>JavaScript is a programming language that adds interactivity to websites. It allows you to change content on the page, respond to user actions like clicks or typing, and create dynamic features such as forms, pop-ups, or animations. With JavaScript, you can also validate user input, create interactive games, and build complex web applications. It runs directly in the user's browser, making websites faster and more responsive. By using JavaScript, you can make your website more interactive, engaging, and user-friendly! </p>
+        
+        <hr>
+
+        <h2>Breaking Down JavaScript!</h2>
+        
+        <!-- First Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="javascriptcapture.jpg" alt="A screenshot of Javascript web development coding practice">
+            </div>
+            <div class="chat-bubble fade">
+                This image portrays some of the JavaScript we used to create the flashcards in the Revise section of this website and also the fade in effects you can see even on this page. With JavaScript you can make your website more interactive and fun, and even create games! Observe the way that comments are made in JavaScript, as these too are different from HTML or CSS comments.
+            </div>
+        </div>
+
+    <h3>JavaScript Cheat Sheet</h3>
+        <!-- Second Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="javascriptguide.png" alt="A cheatsheet for JavaScript">
+            </div>
+            <div class="chat-bubble fade">
+              JavaScript is more complex than HTML and CSS, so it may take time to understand, but don’t give up! Here's a quick overview: JavaScript selectors are used to select HTML elements so you can interact with them. Selectors can target elements like buttons, paragraphs, or divs in your HTML, modifying their properties. Events allow you to respond to actions like clicks or keypresses; they're used to trigger specific actions (functions) when something happens. Traversing is navigating through the DOM (Document Object Model) to find/interact with related elements. You can go up, down, or sideways in the DOM tree to find elements. Manipulation means changing the content or appearance of elements on a webpage. This can include modifying text, styles, attributes, or adding/removing elements.
+            </div>
+        </div>
+
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="javascriptguide2.jpg" alt="A cheatsheet for JavaScript">
+            </div>
+            <div class="chat-bubble fade">
+               This little cheatsheet goes into more of the vocabulary and the basics of JavaScript to give you a better understanding of the topic. But the best way to learn JavaScript is by actually doing it! So go on...make your website!
+            </div>
+        </div>
+
+<hr>
+        <h4>Additional Helpful JavaScript Resource</h4>
+
+    
+    <!-- YouTube video embed -->
+   <div class="video-container fade">
+    <iframe 
+        src="https://www.youtube.com/embed/fkMAAWMQHS4?si=x0QKOicgqKnuSpV7" 
+        title="A Beginner's Guide to JavaScript" 
+        style="border: none;" <!-- Use CSS to remove the border -->
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+    </main>
+    <!-- External JavaScipt Link -->
+     <script src="codemodejavascript.js"></script>
+   <!-- Footer with Copyright Notice -->
+    <footer>
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
+    </footer>
+       <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

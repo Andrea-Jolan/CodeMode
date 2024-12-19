@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>HTML - Structure Your Website | CodeMode Web Design</title>
+
+    <meta name="description" content="Learn how to structure a website with HTML in this CodeMode guide. Understand HTML basics, tags, and best practices for creating webpages.">
+    <meta name="author" content="Andrea Nagy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <!-- Link to the external JavaScript file -->
+
+     <style> <!-- Begins inline CSS for additional styling -->
+        main h1 { /* Styles for the main heading */
+            margin: 0; /* Removes default margin */
+            padding-top: 50px; /* Creates space to account for a fixed navigation bar */
+            text-align: center; /* Centers the heading */
+            font-size: 48px; /* Sets the font size */
+            color: #4a235a; /* Sets the text color */
+            }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>CodeMode</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>What is HTML?</h1>
+        <p>HTML (HyperText Markup Language) is the standard language used to create and design the structure of web pages. It’s like the blueprint for websites! It's the foundation for all web development, and everything users see on a webpage begins with HTML. It allows developers (like you!) to organize content on a webpage into headings, paragraphs, links, images, tables, and more. It's considered the structure of developing a website.</p>
+        
+        <hr> <!-- Horizontal rule for section separation -->
+
+        <h2>Breaking Down HTML!</h2> <!-- Subheading for the next section -->
+        <div class="content-row"> <!-- Container for the first image and description -->
+            <div class="image-container fade"> <!-- Container for the image with a fade effect -->
+                <img src="htmlcapture.jpg" alt="A screenshot of HTML web development coding practice"> <!-- Image showcasing HTML code -->
+            </div>
+            <div class="chat-bubble fade"> <!-- Chat bubble with a fade effect -->
+                The first image on the left showcases some HTML code used to structure a webpage...
+            </div>
+        </div>
+
+        <!-- Second Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="codemodecapture.jpg" alt="A screenshot of the result of the above HTML and some CSS">
+            </div>
+            <div class="chat-bubble fade">
+                This image shows the result of the HTML code above. The navigation bar at the top features a logo in the corner and links on the right, with a custom Google Font applied to the logo. The styling, including colors and the navigation bar's placement, is done via an external CSS file linked in the HTML. While we’ll delve deeper into CSS in the next chapter, this example highlights how basic HTML forms the foundation of a webpage.
+            </div>
+        </div>
+
+        <h3>Building Your Text in HTML</h3>
+
+        <!-- Third Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="htmlguide.jpg" alt="A cheat sheet for HTML coding">
+            </div>
+            <div class="chat-bubble fade">
+               Here we can see some additional HTML tags to help you build your text on your webpage. With the above example and these additional tools, you should now be all ready to build the structure of your webpage!
+            </div>
+        </div>
+
+<hr>
+
+        <h4>Additional Helpful HTML Resource</h4>
+    
+    <!-- YouTube video embed -->
+    <div class="video-container fade"> <!-- Container for the embedded video with a fade effect -->
+    <iframe 
+    src="https://www.youtube.com/embed/BzYMFd-lQL4?si=NU-WmZOeqDXB4btU" 
+    title="HTML Beginner Guide"
+    style="border: none;" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+
+</div>
+
+
+    </main>
+
+     <script src="codemodejavascript.js"></script>
+
+      <!-- Footer with Copyright Notice -->
+    <footer>
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
+    </footer>
+     <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

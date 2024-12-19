@@ -1,0 +1,144 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML -->
+<html lang="en"> <!-- specifies the language as English -->
+<head> <!-- Contains metadata and links for the document -->
+    <title>CodeMode - Webdesign Step by Step</title> <!-- Specifies the title of the webpage displayed in the browser tab -->
+    <meta name="description" content="CodeMode: Webdesign Step By Step"> <!-- Provides a brief description of the webpage for search engines -->
+    <meta name="keywords" content="Webdesign, Coding, HTML, CSS, JavaScript, CodeMode"> <!-- Lists keywords to help with search engine optimization (SEO) -->
+    <meta name="author" content="Andrea Nagy"> <!-- the author of the webpage -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnects to Google's font API to load web fonts more quickly -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnects to the Google Fonts CDN for faster font loading. -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet"> <!-- Loads the "Playfair Display SC" font style from Google Fonts -->
+    <link rel="stylesheet" href="StyleSheet.css"> <!-- Links to an external CSS file for internal styling -->
+
+    <style>
+        /* General Layout for Content */
+        .content-wrapper { /* General layout for content sections */
+            display: flex; /* Uses a flexible box layout */
+            align-items: flex-start; /* Aligns items at the start of the cross axis */
+            gap: 20px; /* Sets space between items */
+            margin: 20px; /* Adds margin around the container */
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+        }
+
+        .responsive-image { /* Styles for responsive images */
+            max-width: 100%; /* Ensures image never exceeds its container width */
+            height: auto; /* Maintains aspect ratio */
+            width: 300px; /* Sets a default width */
+            display: block; /* Ensures the image is treated as a block element */
+        }
+
+        .text-content { /* Styles for text content sections */
+            max-width: 60%; /* Limits text content width for readability */
+        }
+
+        .chat-bubble { /* Styles for chat bubble-like elements */
+            background-color: #bccceb; /* Sets bubble background color */
+            padding: 15px 30px; /* Adds padding inside the bubble */
+            border-radius: 20px; /* Rounds the corners */
+            margin: 10px 0; /* Adds vertical spacing */
+            max-width: 70%; /* Limits the maximum width */
+            min-height: 80px; /* Sets a minimum height */
+        }
+
+        .second-content-wrapper { /* Specific styles for the second content section */
+            flex-direction: row; /* Aligns items in a row */
+            gap: 100px; /* Adds more space between items */
+        }
+
+        .third-content-wrapper { /* Specific styles for the third content section */
+            gap: 220px; /* Adds more space between items */
+        }
+
+        @media (max-width: 768px) { /* Responsive styles for screens under 768px width */
+            .content-wrapper {
+                flex-direction: column; /* Stacks items vertically */
+                align-items: center; /* Centers items horizontally */
+            }
+
+            .text-content {
+                max-width: 90%; /* Expands text content width */
+                text-align: center; /* Centers the text */
+            }
+
+            .chat-bubble {
+                max-width: 90%; /* Expands bubble width */
+                min-height: 60px; /* Reduces minimum height */
+                padding: 10px 20px; /* Reduces padding */
+            }
+        }
+
+    </style>
+</head>
+<body id="homepage"> <!-- Opens the body of the document with an ID for styling -->
+    <header> <!-- Header section containing the logo and navigation -->
+        <div class="logo"> <!-- Container for the logo -->
+            <h1>CodeMode</h1> <!-- Displays the website's title -->
+        </div>
+        <nav> <!-- Navigation bar -->
+            <ul class="nav-links"> <!-- Unordered list for navigation links -->
+                <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+            </ul>
+        </nav>
+    </header>
+    <main> <!-- Main content section -->
+        <div class="content-wrapper"> <!-- Wrapper for the first content section -->
+            <div class="text-content"> <!-- Text content container -->
+                <h1>What is CodeMode?</h1> <!-- Heading for the section -->
+                <div class="chat-bubble fade"> <!-- Chat bubble with fading animation -->
+                    CodeMode is your straightforward study companion for your Web Design college module. It covers a range of essential topics in coding, helping you navigate the fundamentals of web development. With this website, you can review key concepts, reinforce your knowledge, and test your understanding with interactive flashcards.
+                </div>
+            </div>
+            <div class="image-container fade"> <!-- Container for the image with fading animation -->
+                <img src="coding.png" alt="A graphic depicting an animated figure coding" class="responsive-image"> <!-- Responsive image with description for accessibility -->
+            </div>
+        </div>
+
+        <div class="content-wrapper second-content-wrapper"> <!-- Wrapper for the second content section -->
+            <div class="image-container fade">
+                <img src="purpleteam.png" alt="A graphic depicting a team coding together" class="responsive-image">
+            </div>
+            <div class="text-content">
+                <h2>What You'll Learn</h2>
+                <div class="chat-bubble fade">
+                    CodeMode will cover the basics of web design, including:
+                    <ul> <!-- Unordered list of topics -->
+                        <li>HTML</li> <!-- List item for HTML -->
+                        <li>CSS</li> <!-- List item for CSS -->
+                        <li>JavaScript</li> <!-- List item for JavaScript -->
+                    </ul>
+                    You will learn how to design and create your own website that you can launch!
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper third-content-wrapper"> <!-- Wrapper for the third content section -->
+            <div class="text-content">
+                <h3>Features</h3>
+                <div class="chat-bubble fade">
+                    <ul>
+                        <li>Study content taken straight from the lectures!</li>
+                        <li>Helpful outside resources!</li>
+                        <li>Test yourself with study flashcards!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="image-container fade">
+                <img src="list.png" alt="An image depicting a list with ticked off items" class="responsive-image">
+            </div>
+        </div>
+     </main>
+     <script src="codemodejavascript.js"></script> <!-- Links to an external JavaScript file -->
+      <!-- Footer with Copyright Notice -->
+    <footer> <!-- Footer section -->
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p> <!-- Copyright notice with dynamic year -->
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Revise - Test Yourself with Interactive Flashcards! | CodeMode Web Design</title>
+    <meta name="description" content="CodeMode Revision: Test your knowledge with interactive flashcards on web design topics. Reinforce your learning and track your progress.">
+    <meta name="author" content="Andrea Nagy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CodeMode</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Test Yourself!</h1>
+        <h2 style="color: #4a235a;">Click to Flip the Card for the Answer, then press Next for another question</h2>
+
+
+       <!-- Flashcard Container -->
+<div class="flashcard-container">
+    <div class="flashcard">
+        <div class="flashcard-inner">
+            <div class="flashcard-front">
+                <!-- Front of the flashcard (Question) -->
+                <p id="question">What is HTML?</p>
+            </div>
+            <div class="flashcard-back">
+                <!-- Back of the flashcard (Answer) -->
+                <p id="answer">HTML stands for HyperText Markup Language.</p>
+            </div>
+        </div>
+    </div>
+    <button id="next-button">Next</button> <!--Button to go through the flashcards-->
+</div>
+
+</main>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="codemodejavascript.js"></script>
+    <!-- Footer with Copyright Notice -->
+    <footer>
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

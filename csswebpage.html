@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS - Design Your Website | CodeMode Web Design</title>
+
+    <meta name="description" content="Learn CSS basics, styling techniques, and design principles with CodeMode. Master CSS to enhance your website's look and feel.">
+    <meta name="author" content="Andrea Nagy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <style>
+        /* General styles for h1 */
+        main h1 {
+            margin: 0;
+            padding-top: 50px; /* Accounts for the height of the fixed navigation bar */
+            text-align: center;
+            font-size: 48px;
+            color: #4a235a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CodeMode</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                 <li><a href="index.html">Home</a></li> <!-- Link to the homepage -->
+                <li><a href="htmlwebpage.html">HTML</a></li> <!-- Link to the HTML page -->
+                <li><a href="csswebpage.html">CSS</a></li> <!-- Link to the CSS page -->
+                <li><a href="javascriptwebpage.html">JavaScript</a></li> <!-- Link to the JavaScript page -->
+                <li><a href="revisewebpage.html">Revise</a></li> <!-- Link to the revision page -->
+                <li><a href="contact.html">Contact</a></li> <!-- Link to the contact page -->
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>What is CSS?</h1>
+        <p>CSS (Cascading Style Sheets) is a language used to style and design web pages. It controls how HTML elements look, including their layout, colors, fonts, spacing, and overall appearance. CSS makes web pages more visually appealing and helps create consistent designs across a website. It works by applying rules to HTML elements, either directly in the HTML file or through an external stylesheet.</p>
+        
+        <hr>
+
+        <h2>Breaking Down CSS!</h2>
+        <!-- First Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="csscapture.jpg" alt="A screenshot of external CSS web development coding practice">
+            </div>
+            <div class="chat-bubble fade">
+                In this image, we can see some of the external CSS that was used in making this webpage itself. External CSS is used for styling that you want to apply to multiple webpages. You might also chooose to use external CSS if your CSS is quite lengthy, to ensure that your HTML codes remain readable and easy to comprehend. Observe the difference in how we attach comments as well compared to HTML. They follow a different structure. 
+            </div>
+        </div>
+
+        <!-- Second Image and Bubble -->
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="internalcss.jpg" alt="A screenshot of internal CSS web development coding practice">
+            </div>
+            <div class="chat-bubble fade">
+                Here we showcase some internal CSS. Internal CSS is best when you want to apply certain styling only to that page in particular. As so, we need to place the style tags between the head tags. No linking is required. 
+            </div>
+        </div>
+
+        <h3>Design with CSS</h3>
+
+        <div class="content-row">
+            <div class="image-container fade">
+                <img src="cssguide.jpg" alt="A cheat sheet for CSS coding">
+            </div>
+            <div class="chat-bubble fade">
+               These are some additional CSS tags to help you design your webpage. Use the above example and these additional tools to design the website of your dreams! 
+            </div>
+        </div>
+
+        <hr>
+
+        <h4>Additional Helpful CSS Resource</h4>
+
+    <!-- YouTube video embed -->
+    <div class="video-container fade">
+    <iframe 
+        src="https://www.youtube.com/embed/AGDDdsiZ0Ko?si=x5EMyH5pV0_3EnTF" 
+        title="A Beginner's Guide to CSS" 
+        style="border: none;" <!-- Use CSS to remove the border -->
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+    </main>
+      <script src="codemodejavascript.js"></script>
+   <!-- Footer with Copyright Notice -->
+    <footer>
+        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
+    </footer>
+       <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
