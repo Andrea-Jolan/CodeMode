@@ -119,55 +119,46 @@ updateFlashcard();  // Update flashcard on page load
 
 
 // Complex form Javascript 
-// Add event listener for the form submission
-document.getElementById("project-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+// Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Add event listener to the form
+    document.getElementById("project-form").addEventListener("submit", function (event) {
+        // Prevent default form submission behavior
+        event.preventDefault();
 
-    // Get form data
-    const form = document.getElementById("project-form");
-    const formData = new FormData(form);
+        // Get form data
+        const form = document.getElementById("project-form");
+        const formData = new FormData(form);
 
-    // Prepare EmailJS parameters
-    const emailParams = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        portfolio: formData.get("portfolio"),
-        title: formData.get("title"),
-        description: formData.get("description"),
-        type: formData.get("type"),
-        feedback: formData.get("feedback"),
-        learning: formData.get("learning"),
-        questions: formData.get("questions"),
-        rating: formData.get("rating"),
-    };
+        // Prepare EmailJS parameters
+        const emailParams = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            portfolio: formData.get("portfolio"),
+            title: formData.get("title"),
+            description: formData.get("description"),
+            type: formData.get("type"),
+            feedback: formData.get("feedback"),
+            learning: formData.get("learning"),
+            questions: formData.get("questions"),
+            rating: formData.get("rating"),
+        };
 
-    // Send the email using EmailJS
-    emailjs
-        .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
-        .then(
-            function (response) {
-                // Show the modal
-                const modal = document.getElementById("submission-modal");
-                modal.style.display = "block";
-
-                // Add event listener for the close button in the modal
-                document.getElementById("close-modal").addEventListener("click", function () {
-                    modal.style.display = "none";
-                });
-
-                // Optional: Close modal when clicking outside of the modal content
-                window.addEventListener("click", function (event) {
-                    if (event.target === modal) {
-                        modal.style.display = "none";
-                    }
-                });
-
-                // Reset the form fields
-                form.reset();
-            },
-            function (error) {
-                alert("Failed to send the form. Please try again later.");
-                console.error("EmailJS Error:", error);
-            }
-        );
+        // Send the email using EmailJS
+        emailjs
+            .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
+            .then(
+                function (response) {
+                    // Success: Show a confirmation alert and reset the form
+                    alert("Your form has been submitted successfully!");
+                    form.reset();
+                },
+                function (error) {
+                    // Error: Show an error alert and log the issue
+                    alert("Failed to send the form. Please try again later.");
+                    console.error("EmailJS Error:", error);
+                }
+            );
+    });
 });
+   
