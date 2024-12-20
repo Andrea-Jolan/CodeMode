@@ -26,35 +26,48 @@
         </nav>
     </header>
      <!-- Main content area -->
-   <main>
+  >
+        <!-- Main heading -->
         <h1 style="text-align: center;">Submit Your Questions and Any Projects for Feedback</h1>
         <h2 style="text-align: center;">Let Us Know What We Can Help You With</h2>
+        
+        <!-- Form section -->
         <section class="form-container">
+            <!-- Section heading -->
             <h1 style="color: #bccceb; text-align: center;">Question Form</h1>
-            <form id="project-form">
+            
+            <!-- Start of the form -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- Name input field -->
                 <div class="form-group">  
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Full Name" required>
                 </div>
+                <!-- Email input field -->
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                 </div>
+                <!-- Portfolio/website input field (optional) -->
                 <div class="form-group">
                     <label for="portfolio">Portfolio/Website Link (optional)</label>
                     <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
                 </div>
+                <!-- Project title input field -->
                 <div class="form-group">
                     <label for="title">Project Title</label>
                     <input type="text" id="title" name="title" placeholder="Project Title" required>
                 </div>
+                <!-- Project description textarea -->
                 <div class="form-group">
                     <label for="description">Project Description</label>
                     <textarea id="description" name="description" rows="4" placeholder="Brief description of your project" required></textarea>
                 </div>
+                <!-- Project type dropdown -->
                 <div class="form-group">
                     <label for="type">Project Type</label>
                     <select id="type" name="type" required>
+                        <!-- Dropdown options -->
                         <option value="" disabled selected>Select Project Type</option>
                         <option value="Portfolio">Portfolio</option>
                         <option value="Blog">Blog</option>
@@ -63,6 +76,7 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
+                <!-- Feedback preferences radio buttons -->
                 <div class="form-group">
                     <label>Feedback Preferences</label>
                     <label><input type="radio" name="feedback" value="Design" required> Design</label>
@@ -70,14 +84,17 @@
                     <label><input type="radio" name="feedback" value="Code"> Code</label>
                     <label><input type="radio" name="feedback" value="All"> All</label>
                 </div>
+                <!-- Knowledge rating slider -->
                 <div class="form-group">
                     <label for="learning">Rate CodeMode's knowledge support (1 to 10):</label>
                     <input type="range" id="learning" name="learning" min="1" max="10">
                 </div>
+                <!-- Questions textarea -->
                 <div class="form-group">
                     <label for="questions">Do you have any questions or need any help?</label>
                     <textarea id="questions" name="questions" rows="4" placeholder="Ask any coding questions" required></textarea>
                 </div>
+                <!-- Star rating radio buttons -->
                 <div class="form-group">
                     <label>Rate our learning materials:</label>
                     <div class="rating">
@@ -88,14 +105,12 @@
                         <input type="radio" id="star5" name="rating" value="1"><label for="star5">★</label>
                     </div>
                 </div>
+                <!-- Submit button -->
                 <button type="submit" id="submit-button">Submit</button>
             </form>
         </section>
     </main>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        emailjs.init("sY6ejBlyegPDLsfhz");
-    </script>
-    <script src="codemodejavascript.js"></script>
+    <!-- Custom JavaScript -->
+   <script src="codemodejavascript.js"></script>
 </body>
 </html>
