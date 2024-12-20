@@ -119,7 +119,6 @@ updateFlashcard();  // Update flashcard on page load
 
 
 // Complex form Javascript 
-// Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the form
     document.getElementById("project-form").addEventListener("submit", function (event) {
@@ -144,21 +143,27 @@ document.addEventListener("DOMContentLoaded", function () {
             rating: formData.get("rating"),
         };
 
+        // Debug: Log the data
+        console.log("EmailJS Params:", emailParams);
+
+        // Check for required values
+        if (!emailParams.name || !emailParams.email || !emailParams.title || !emailParams.description || !emailParams.type || !emailParams.feedback || !emailParams.questions) {
+            alert("Please fill out all required fields.");
+            return;
+        }
+
         // Send the email using EmailJS
         emailjs
             .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
             .then(
                 function (response) {
-                    // Success: Show a confirmation alert and reset the form
                     alert("Your form has been submitted successfully!");
                     form.reset();
                 },
                 function (error) {
-                    // Error: Show an error alert and log the issue
                     alert("Failed to send the form. Please try again later.");
                     console.error("EmailJS Error:", error);
                 }
             );
     });
 });
-   
