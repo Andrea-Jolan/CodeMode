@@ -119,8 +119,8 @@ updateFlashcard();  // Update flashcard on page load
 
 
 // Complex form Javascript 
-// Add event listener for the submit button
-document.getElementById("submit-button").addEventListener("click", function (event) {
+// Add event listener for the form submission
+document.getElementById("project-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
     // Get form data
@@ -155,6 +155,3 @@ document.getElementById("submit-button").addEventListener("click", function (eve
             }
         );
 });
-
-
-                
