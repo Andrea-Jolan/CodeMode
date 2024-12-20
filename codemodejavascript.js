@@ -119,37 +119,42 @@ updateFlashcard();  // Update flashcard on page load
 
 
 // Complex form Javascript 
+// Add event listener for the submit button
+document.getElementById("submit-button").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
 
- // Add event listener for the submit button
-        document.getElementById("submit-button").addEventListener("click", async function () {
-            const form = document.getElementById("project-form"); // Get form element
-            const formData = new FormData(form); // Collect form data
-            const data = {};
-            
-            // Convert FormData to JSON
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            
-            try {
-                // Send data to Google Apps Script
-                const response = await fetch("https://script.google.com/macros/s/AKfycbyfCwnRmKiA68g3sqbpFnX-tte76QdQstf3BVFmuhy4LL-s7Fk__OK5QBRIwQmQQ-Fibw/exec", {
-                    method: "POST", // Use POST method
-                    headers: {
-                        "Content-Type": "application/json", // Specify JSON content type
-                    },
-                    body: JSON.stringify(data), // Convert data to JSON string
-                });
-                
-                // Handle success or error responses
-                if (response.ok) {
-                    alert("Form submitted successfully!"); // Success alert
-                    form.reset(); // Reset the form fields
-                } else {
-                    alert("There was an error submitting the form."); // Error alert
-                }
-            } catch (error) {
-                console.error("Error:", error); // Log error details
-                alert("There was an error submitting the form."); // Error alert
+    // Get form data
+    const form = document.getElementById("project-form");
+    const formData = new FormData(form);
+
+    // Prepare EmailJS parameters
+    const emailParams = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        portfolio: formData.get("portfolio"),
+        title: formData.get("title"),
+        description: formData.get("description"),
+        type: formData.get("type"),
+        feedback: formData.get("feedback"),
+        learning: formData.get("learning"),
+        questions: formData.get("questions"),
+        rating: formData.get("rating"),
+    };
+
+    // Send the email using EmailJS
+    emailjs
+        .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
+        .then(
+            function (response) {
+                alert("Your form has been submitted successfully!");
+                form.reset(); // Reset the form fields
+            },
+            function (error) {
+                alert("Failed to send the form. Please try again later.");
+                console.error("EmailJS Error:", error);
             }
-        });
+        );
+});
+
+
+                
