@@ -119,11 +119,24 @@
         </form>
     </section>
 </main>
-    <footer>
-        <p class="copyright">&copy; <span id="year"></span> 2024 CodeMode. All Rights Reserved.</p>
-    </footer>
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+<footer>
+    <p class="copyright">&copy; <span id="year"></span> <script>document.write(new Date().getFullYear());</script> CodeMode. All Rights Reserved.</p>
+</footer>
+
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    emailjs.init("sY6ejBlyegPDLsfhz"); // Initialize EmailJS with your User ID
+</script>
+
+<!-- Other custom scripts -->
+<script src="codemodejavascript.js"></script> <!-- Links to an external JavaScript file -->
+
+<!-- Footer Year Script -->
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
+
