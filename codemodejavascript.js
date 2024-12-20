@@ -119,51 +119,39 @@ updateFlashcard();  // Update flashcard on page load
 
 
 // Complex form Javascript 
-document.addEventListener("DOMContentLoaded", function () {
+
+// JavaScript for form submission handling
+
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
     // Add event listener to the form
-    document.getElementById("project-form").addEventListener("submit", function (event) {
-        // Prevent default form submission behavior
-        event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-        // Get form data
-        const form = document.getElementById("project-form");
-        const formData = new FormData(form);
+        const form = event.target; // The form being submitted
+        const formData = new FormData(form); // Collect form data
 
-        // Prepare EmailJS parameters
-        const emailParams = {
-            name: formData.get("name"),
-            email: formData.get("email"),
-            portfolio: formData.get("portfolio"),
-            title: formData.get("title"),
-            description: formData.get("description"),
-            type: formData.get("type"),
-            feedback: formData.get("feedback"),
-            learning: formData.get("learning"),
-            questions: formData.get("questions"),
-            rating: formData.get("rating"),
-        };
+        // Send the form data using the Fetch API
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                Accept: 'application/json',
+            },
+        });
 
-        // Debug: Log the data
-        console.log("EmailJS Params:", emailParams);
+        const messageContainer = document.getElementById('form-message');
 
-        // Check for required values
-        if (!emailParams.name || !emailParams.email || !emailParams.title || !emailParams.description || !emailParams.type || !emailParams.feedback || !emailParams.questions) {
-            alert("Please fill out all required fields.");
-            return;
+        if (response.ok) {
+            // Show success message
+            messageContainer.textContent = 'Thank you! Your submission has been received.';
+            messageContainer.style.display = 'block';
+            form.reset(); // Reset the form
+        } else {
+            // Show error message
+            messageContainer.textContent = 'Oops! There was an error submitting the form. Please try again.';
+            messageContainer.style.display = 'block';
+            messageContainer.style.color = 'red'; // Change text color for error
         }
-
-        // Send the email using EmailJS
-        emailjs
-            .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
-            .then(
-                function (response) {
-                    alert("Your form has been submitted successfully!");
-                    form.reset();
-                },
-                function (error) {
-                    alert("Failed to send the form. Please try again later.");
-                    console.error("EmailJS Error:", error);
-                }
-            );
     });
 });
