@@ -146,8 +146,24 @@ document.getElementById("project-form").addEventListener("submit", function (eve
         .send("service_k2sss88", "template_habqnie", emailParams, "sY6ejBlyegPDLsfhz")
         .then(
             function (response) {
-                alert("Your form has been submitted successfully!");
-                form.reset(); // Reset the form fields
+                // Show the modal
+                const modal = document.getElementById("submission-modal");
+                modal.style.display = "block";
+
+                // Add event listener for the close button in the modal
+                document.getElementById("close-modal").addEventListener("click", function () {
+                    modal.style.display = "none";
+                });
+
+                // Optional: Close modal when clicking outside of the modal content
+                window.addEventListener("click", function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+
+                // Reset the form fields
+                form.reset();
             },
             function (error) {
                 alert("Failed to send the form. Please try again later.");
